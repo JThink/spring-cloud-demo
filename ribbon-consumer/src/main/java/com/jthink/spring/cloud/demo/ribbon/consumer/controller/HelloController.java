@@ -1,4 +1,4 @@
-package com.jthink.spring.cloud.demo.ribbon.comsumer.controller;
+package com.jthink.spring.cloud.demo.ribbon.consumer.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

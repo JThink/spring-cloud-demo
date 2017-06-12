@@ -1,4 +1,4 @@
-package com.jthink.spring.cloud.demo.ribbon.comsumer.application;
+package com.jthink.spring.cloud.demo.ribbon.consumer.application;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -21,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-@ComponentScan(basePackages = {"com.jthink.spring.cloud.demo.ribbon.comsumer"})
+@ComponentScan(basePackages = {"com.jthink.spring.cloud.demo.ribbon.consumer"})
 @PropertySource("classpath:properties/ribbon-consumer.properties")
 public class Application {
 
