@@ -35,6 +35,7 @@ dependencies {
   compile "org.springframework.boot:spring-boot-starter-web"
   compile "org.springframework.cloud:spring-cloud-starter-eureka"
   compile "org.springframework.cloud:spring-cloud-starter-feign"
+  compile "spring-cloud-demo:feign-client:0.0.1"
 
   testCompile "org.springframework.boot:spring-boot-starter-test"
 }

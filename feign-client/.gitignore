@@ -6,7 +6,6 @@ gen-java/
 .externalToolBuilders/
 .settings/
 .gradle/
-.DS_Store
 .classpath
 .gradletasknamecache
 .buildpath

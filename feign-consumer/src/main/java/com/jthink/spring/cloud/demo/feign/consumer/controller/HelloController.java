@@ -1,6 +1,6 @@
 package com.jthink.spring.cloud.demo.feign.consumer.controller;
 
-import com.jthink.spring.cloud.demo.feign.consumer.client.HelloService;
+import com.jthink.spring.cloud.demo.feign.client.iface.HelloService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

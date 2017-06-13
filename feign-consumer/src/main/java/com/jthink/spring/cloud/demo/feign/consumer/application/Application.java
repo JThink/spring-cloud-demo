@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.web.client.RestTemplate;
 
-/**
+/**y
  * JThink@JThink
  *
  * @author JThink
@@ -20,7 +20,7 @@ import org.springframework.web.client.RestTemplate;
  * @desc
  * @date 2017-06-05 10:10:57
  */
-@EnableFeignClients(basePackages = {"com.jthink.spring.cloud.demo.feign.consumer"})
+@EnableFeignClients(basePackages = {"com.jthink.spring.cloud.demo.feign.client.iface"})
 @EnableDiscoveryClient
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.jthink.spring.cloud.demo.feign.consumer"})
