@@ -50,7 +50,7 @@ uploadArchives {
 }
 
 dependencies {
-  compile ("org.springframework.cloud:spring-cloud-netflix-core:$netflixCoreVersion")  {
+  compile ("org.springframework.cloud:spring-cloud-netflix-core:$netflixCoreVersion") {
     exclude group: 'org.springframework.boot', module: 'spring-boot'
     exclude group: 'org.springframework.boot', module: 'spring-boot-autoconfigure'
   }

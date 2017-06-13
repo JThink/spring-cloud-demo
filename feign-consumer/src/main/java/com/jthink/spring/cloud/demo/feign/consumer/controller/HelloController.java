@@ -1,6 +1,8 @@
 package com.jthink.spring.cloud.demo.feign.consumer.controller;
 
+import com.jthink.spring.cloud.demo.feign.client.dto.UserDto;
 import com.jthink.spring.cloud.demo.feign.client.iface.HelloService;
+import com.jthink.spring.cloud.demo.feign.client.message.MatchMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +29,14 @@ public class HelloController {
     @RequestMapping(value = "feign-consumer", method = RequestMethod.GET)
     public String consume() {
         return this.helloService.hello();
+    }
+
+    @RequestMapping(value = "feign-consumer1", method = RequestMethod.GET)
+    public MatchMessage consume1() {
+        LOGGER.info(this.helloService.hello1("levi.qian"));
+        MatchMessage message = this.helloService.hello2("levi.qian", 20);
+        LOGGER.info(message.getResult() + "");
+        return this.helloService.hello3(new UserDto("levi.qian", 27));
     }
 }
 
