@@ -26,6 +26,7 @@ public class HelloController implements HelloService {
 
     @Override
     public String hello(@RequestParam(value = "name", required = false) String name) {
+        LOGGER.info("call hello, simple");
         return "Hello " + name;
     }
 
@@ -33,11 +34,13 @@ public class HelloController implements HelloService {
     public MatchMessage hello(@RequestHeader(value = "name", required = false) String name,
                          @RequestHeader(value = "age", required = false) Integer age) {
         UserDto userDto = new UserDto(name, age);
+        LOGGER.info("call hello, GET");
         return new MatchMessage(userDto, MatchMessage.RESULT_MATCHED);
     }
 
     @Override
     public MatchMessage hello(@RequestBody(required = false) UserDto userDto) {
+        LOGGER.info("call hello, POST");
         return new MatchMessage(userDto, MatchMessage.RESULT_MATCHED);
     }
 }
