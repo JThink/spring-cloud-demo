@@ -23,7 +23,6 @@ repositories {
 }
 
 ext {
-  feignHttpclientVersion = '9.5.0'
 }
 
 dependencyManagement {
@@ -36,7 +35,7 @@ dependencies {
   compile "org.springframework.boot:spring-boot-starter-web"
   compile "org.springframework.cloud:spring-cloud-starter-eureka"
   compile "org.springframework.cloud:spring-cloud-starter-feign"
-  compile "io.github.openfeign:feign-httpclient:$feignHttpclientVersion"
+  compile "jthink:spring-boot-starter-feign-httpclient:0.0.1"
   compile "spring-cloud-demo:feign-client:0.0.1"
 
   testCompile "org.springframework.boot:spring-boot-starter-test"
