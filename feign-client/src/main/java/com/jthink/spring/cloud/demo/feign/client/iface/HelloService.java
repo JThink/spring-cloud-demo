@@ -14,18 +14,16 @@ import org.springframework.web.bind.annotation.*;
  * @date 2017-06-13 09:29:09
  */
 @FeignClient("eureka-client-test")
+@RequestMapping("spring-cloud")
 public interface HelloService {
 
-    @RequestMapping("/hello")
-    String hello();
+    @RequestMapping(value = "hello1", method = RequestMethod.GET)
+    String hello(@RequestParam(value = "name", required = false) String name);
 
-    @RequestMapping(value = "/hello1", method = RequestMethod.GET)
-    String hello1(@RequestParam(value = "name", required = false) String name);
-
-    @RequestMapping(value = "/hello2", method = RequestMethod.GET)
-    MatchMessage hello2(@RequestHeader(value = "name", required = false) String name,
+    @RequestMapping(value = "hello2", method = RequestMethod.GET)
+    MatchMessage hello(@RequestHeader(value = "name", required = false) String name,
                         @RequestHeader(value = "age", required = false) Integer age);
 
-    @RequestMapping(value = "/hello3", method = RequestMethod.POST)
-    MatchMessage hello3(@RequestBody(required = false) UserDto userDto);
+    @RequestMapping(value = "hello3", method = RequestMethod.POST)
+    MatchMessage hello(@RequestBody(required = false) UserDto userDto);
 }

@@ -27,16 +27,11 @@ public class HelloController {
     private HelloService helloService;
 
     @RequestMapping(value = "feign-consumer", method = RequestMethod.GET)
-    public String consume() {
-        return this.helloService.hello();
-    }
-
-    @RequestMapping(value = "feign-consumer1", method = RequestMethod.GET)
     public MatchMessage consume1() {
-        LOGGER.info(this.helloService.hello1("levi.qian"));
-        MatchMessage message = this.helloService.hello2("levi.qian", 20);
+        LOGGER.info(this.helloService.hello("levi.qian"));
+        MatchMessage message = this.helloService.hello("levi.qian", 20);
         LOGGER.info(message.getResult() + "");
-        return this.helloService.hello3(new UserDto("levi.qian", 27));
+        return this.helloService.hello(new UserDto("levi.qian", 27));
     }
 }
 
