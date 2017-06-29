@@ -2,7 +2,7 @@
 <!DOCTYPE xml>
 <configuration scan="false">
 
-  <property name="APP_NAME" value="hystrix-consumer" />
+  <property name="APP_NAME" value="config-center" />
   <property name="LOG_HOME" value="../logs" />
   <contextName>${APP_NAME}</contextName>
 

@@ -49,7 +49,7 @@ configurations {
 //  compile.exclude group: "org.hibernate", module: "hibernate-validator"
 }
 
-mainClassName = 'com.jthink.spring.cloud.demo.feign.consumer.application.Application'
+mainClassName = 'com.jthink.spring.cloud.demo.hystrix.consumer.application.Application'
 
 buildscript {
   ext {

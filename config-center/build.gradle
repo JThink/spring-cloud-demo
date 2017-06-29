@@ -7,7 +7,7 @@ apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'spring-cloud-demo'
-applicationName = 'eureka-client-test'
+applicationName = 'config-center'
 version = '0.0.1'
 
 sourceCompatibility = 1.7
@@ -32,13 +32,10 @@ dependencyManagement {
 }
 
 dependencies {
-  compile "org.springframework.boot:spring-boot-starter-web"
+  compile "org.springframework.boot:spring-boot-starter"
+  compile "org.springframework.boot:spring-boot-starter-security"
+  compile "org.springframework.cloud:spring-cloud-config-server"
   compile "org.springframework.cloud:spring-cloud-starter-eureka"
-  compile "org.springframework.cloud:spring-cloud-starter-config"
-  compile ("spring-cloud-demo:feign-client:0.0.1") {
-    exclude group: 'org.springframework', module: 'spring-web'
-    exclude group: 'org.springframework.cloud', module: 'spring-cloud-netflix-core'
-  }
 
   testCompile "org.springframework.boot:spring-boot-starter-test"
 }
@@ -46,10 +43,9 @@ dependencies {
 configurations {
   compile.exclude group: "log4j", module: "log4j"
   compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
-//  compile.exclude group: "org.hibernate", module: "hibernate-validator"
 }
 
-mainClassName = 'com.jthink.spring.cloud.demo.eureka.client.test.application.Application'
+mainClassName = 'com.jthink.spring.cloud.demo.config.center.application.Application'
 
 buildscript {
   ext {
