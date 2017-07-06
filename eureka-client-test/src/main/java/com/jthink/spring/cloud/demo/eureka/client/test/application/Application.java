@@ -1,12 +1,11 @@
 package com.jthink.spring.cloud.demo.eureka.client.test.application;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.PropertySource;
 
 /**
  * JThink@JThink
@@ -19,7 +18,6 @@ import org.springframework.context.annotation.PropertySource;
 @EnableDiscoveryClient
 @SpringBootApplication
 @ComponentScan(basePackages = {"com.jthink.spring.cloud.demo.eureka.client.test"})
-@PropertySource("classpath:properties/eureka-client-test.properties")
 public class Application {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(Application.class);

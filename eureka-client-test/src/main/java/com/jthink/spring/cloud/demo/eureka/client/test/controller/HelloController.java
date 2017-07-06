@@ -6,9 +6,11 @@ import com.jthink.spring.cloud.demo.feign.client.message.MatchMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.serviceregistry.Registration;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -20,7 +22,26 @@ import org.springframework.web.bind.annotation.*;
  * @date 2017-06-05 11:36:52
  */
 @RestController
+@RefreshScope
 public class HelloController implements HelloService {
+
+    @Value("${the.test.key}")
+    private String test;
+
+    @Value("${the.test.key2}")
+    private String test2;
+
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    public String hello3() {
+        LOGGER.info("call hello, simple");
+        return this.test2;
+    }
+
+    @RequestMapping(value = "test2", method = RequestMethod.GET)
+    public String hello4() {
+        LOGGER.info("call hello, simple2");
+        return this.test;
+    }
 
     private static final Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
 
