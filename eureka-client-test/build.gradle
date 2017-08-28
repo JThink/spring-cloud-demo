@@ -27,7 +27,7 @@ ext {
 
 dependencyManagement {
   imports {
-    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.SR1'
+    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Dalston.SR2'
   }
 }
 
@@ -37,6 +37,8 @@ dependencies {
   compile "org.springframework.cloud:spring-cloud-starter-eureka"
   compile "org.springframework.cloud:spring-cloud-starter-bus-amqp"
   compile "org.springframework.cloud:spring-cloud-starter-config"
+  compile "org.springframework.cloud:spring-cloud-starter-stream-rabbit"
+  compile "org.springframework.cloud:spring-cloud-starter-sleuth"
   compile ("spring-cloud-demo:feign-client:0.0.1") {
     exclude group: 'org.springframework', module: 'spring-web'
     exclude group: 'org.springframework.cloud', module: 'spring-cloud-netflix-core'
@@ -57,7 +59,7 @@ mainClassName = 'com.jthink.spring.cloud.demo.eureka.client.test.application.App
 
 buildscript {
   ext {
-    springBootVersion = '1.5.3.RELEASE'
+    springBootVersion = '1.5.6.RELEASE'
   }
 
   repositories {
