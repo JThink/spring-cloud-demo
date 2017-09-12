@@ -7,7 +7,7 @@ apply plugin: 'application'
 apply plugin: 'io.spring.dependency-management'
 
 group = 'spring-cloud-demo'
-applicationName = 'config-center'
+applicationName = 'api-gateway'
 version = '0.0.1'
 
 sourceCompatibility = 1.8
@@ -23,6 +23,7 @@ repositories {
 }
 
 ext {
+  traceVersion = '1.2.0'
 }
 
 dependencyManagement {
@@ -33,10 +34,11 @@ dependencyManagement {
 
 dependencies {
   compile "org.springframework.boot:spring-boot-starter"
-  compile "org.springframework.boot:spring-boot-starter-security"
-  compile "org.springframework.cloud:spring-cloud-config-server"
+  compile "org.springframework.cloud:spring-cloud-starter-zuul"
   compile "org.springframework.cloud:spring-cloud-starter-eureka"
-  compile "org.springframework.cloud:spring-cloud-starter-bus-amqp"
+  compile "org.springframework.cloud:spring-cloud-starter-security"
+  compile "org.springframework.cloud:spring-cloud-starter-config"
+  compile "skyeye:skyeye-trace-sc:$traceVersion"
 
   testCompile "org.springframework.boot:spring-boot-starter-test"
 }
@@ -46,7 +48,7 @@ configurations {
   compile.exclude group: "org.slf4j", module: "slf4j-log4j12"
 }
 
-mainClassName = 'com.jthink.spring.cloud.demo.config.center.application.Application'
+mainClassName = 'com.jthink.spring.cloud.demo.api.gateway.application.Application'
 
 buildscript {
   ext {

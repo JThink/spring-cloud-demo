@@ -6,8 +6,8 @@ apply plugin: 'maven'
 group = 'spring-cloud-demo'
 version = '0.0.1'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 compileJava.options.encoding = 'UTF-8'
 buildDir = 'target'
 
